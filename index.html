@@ -94,10 +94,10 @@ nav.scrolled{background:rgba(5,5,7,.85);backdrop-filter:blur(24px);border-bottom
 
 /* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
-.hero-image-wrap{position:relative}
-.hero-image-ring{position:relative;width:fit-content;margin:0 auto}
-.hero-img{width:480px;height:480px;object-fit:cover;object-position:center 18%;border-radius:50%;position:relative;z-index:1;border:4px solid var(--bg)}
+.hero-grid{display:grid;grid-template-columns:520px 1fr;gap:60px;align-items:center;width:100%;max-width:1240px;margin:0 auto;padding:0 24px}
+.hero-image-wrap{position:relative;display:flex;flex-direction:column;align-items:center}
+.hero-image-ring{position:relative;width:fit-content;margin:0 auto;flex-shrink:0}
+.hero-img{width:500px;height:500px;object-fit:cover;object-position:center 18%;border-radius:50%;position:relative;z-index:1;border:5px solid var(--bg);display:block}
 .hero-leds{position:absolute;inset:-70px;pointer-events:none;z-index:0;border-radius:50%;overflow:visible}
 @keyframes ledPulse{0%,100%{opacity:0}50%{opacity:.9}}
 .hero-subscript{font-size:.85rem;color:var(--text3);text-align:center;margin-top:20px;font-style:italic;line-height:1.65;max-width:300px;margin-left:auto;margin-right:auto;padding:0 8px}
@@ -203,7 +203,7 @@ nav.scrolled{background:rgba(5,5,7,.85);backdrop-filter:blur(24px);border-bottom
 
 /* BI */
 #bi{background:var(--surface);position:relative;overflow:hidden}
-.bi-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.bi-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:start;max-width:720px}
 .chart-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);padding:28px;transition:transform .3s,border-color .3s}
 .chart-card:hover{transform:translateY(-4px);border-color:var(--border2)}
 .chart-title{font-size:.85rem;font-weight:700;color:var(--text2);margin-bottom:20px}
@@ -354,7 +354,8 @@ footer{padding:80px 0 40px;border-top:1px solid var(--border);position:relative;
 @media(max-width:900px){
   .hero-grid,.about-grid,.design-grid,.data-grid,.bi-grid,.why-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
   .hero-image-wrap{order:-1}
-  .hero-img{width:320px;height:320px}
+  .hero-img{width:300px;height:300px}
+  .hero-grid{grid-template-columns:1fr!important;gap:48px!important}
   .nav-links,.btn-primary{display:none}
   .menu-toggle{display:flex}
   .reasons-grid{grid-template-columns:1fr}
@@ -408,7 +409,7 @@ footer{padding:80px 0 40px;border-top:1px solid var(--border);position:relative;
   <div class="hero-grid">
     <div class="hero-image-wrap reveal">
       <div class="hero-image-ring" id="heroRing">
-        <img src="edward.jpeg" alt="Edward Mavungah — Web Developer and Cloud Data Engineer" class="hero-img" width="360" height="360">
+        <img src="edward.jpeg" alt="Edward Mavungah — Web Developer and Cloud Data Engineer" class="hero-img" width="500" height="500">
         <div class="hero-leds" id="heroLeds"></div>
       </div>
       <p class="hero-subscript">I'm happy to explore new opportunities working with different people in different industries.</p>
@@ -933,62 +934,6 @@ footer{padding:80px 0 40px;border-top:1px solid var(--border);position:relative;
         </div>
       </div>
 
-      <div>
-        <div class="chart-card reveal reveal-delay-1" style="margin-bottom:20px">
-          <div class="chart-title">Revenue Performance — Quarterly</div>
-          <div class="bar-chart" id="barChart">
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-              <div class="bar gold" style="height:55%;width:100%"></div>
-              <div class="bar-label">Q1</div>
-            </div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-              <div class="bar gold" style="height:72%;width:100%"></div>
-              <div class="bar-label">Q2</div>
-            </div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-              <div class="bar gold" style="height:65%;width:100%"></div>
-              <div class="bar-label">Q3</div>
-            </div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-              <div class="bar gold" style="height:90%;width:100%"></div>
-              <div class="bar-label">Q4</div>
-            </div>
-          </div>
-        </div>
-        <div class="chart-card reveal reveal-delay-2">
-          <div class="chart-title">Customer Growth — Monthly Active Users</div>
-          <div class="bar-chart">
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center"><div class="bar" style="height:40%;width:100%"></div><div class="bar-label">Jan</div></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center"><div class="bar" style="height:52%;width:100%"></div><div class="bar-label">Feb</div></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center"><div class="bar" style="height:60%;width:100%"></div><div class="bar-label">Mar</div></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center"><div class="bar" style="height:68%;width:100%"></div><div class="bar-label">Apr</div></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center"><div class="bar" style="height:74%;width:100%"></div><div class="bar-label">May</div></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center"><div class="bar" style="height:85%;width:100%"></div><div class="bar-label">Jun</div></div>
-          </div>
-        </div>
-        <div class="chart-card reveal reveal-delay-3" style="margin-top:20px">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
-            <div class="chart-title" style="margin-bottom:0">Revenue Trend — Year on Year</div>
-            <span class="live-badge"><span class="live-dot-green"></span>LIVE</span>
-          </div>
-          <svg class="line-chart-svg" id="lcSvg" viewBox="0 0 400 120" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="lcGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#c9a84c" stop-opacity=".55"/>
-                <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <line x1="0" y1="30" x2="400" y2="30" class="lc-grid-line"/>
-            <line x1="0" y1="60" x2="400" y2="60" class="lc-grid-line"/>
-            <line x1="0" y1="90" x2="400" y2="90" class="lc-grid-line"/>
-            <path class="lc-fill" fill="url(#lcGrad)" d="M0,108 L33,96 L66,91 L99,82 L132,86 L165,72 L198,66 L231,54 L264,58 L297,42 L330,36 L363,22 L400,14 L400,120 L0,120 Z"/>
-            <polyline id="lcPath" class="lc-path" points="0,108 33,96 66,91 99,82 132,86 165,72 198,66 231,54 264,58 297,42 330,36 363,22 400,14"/>
-            <circle cx="400" cy="14" r="4" fill="var(--gold)"/>
-            <circle cx="400" cy="14" r="9" fill="var(--gold)" opacity=".25" style="animation:pulse 1.8s ease-in-out infinite"/>
-          </svg>
-          <div class="lc-months"><span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span><span>Dec</span></div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1508,18 +1453,18 @@ document.getElementById('contactForm').addEventListener('submit', async function
   if(!wrap) return;
   // angle in degrees, r = distance from center, size = blob diameter, blur = glow softness
   const leds = [
-    {color:'#c9a84c', angle:270, r:248, size:75, blur:30, dur:2.2, delay:0},
-    {color:'#a855f7', angle:330, r:244, size:65, blur:26, dur:2.8, delay:.5},
-    {color:'#3b82f6', angle:30,  r:250, size:70, blur:28, dur:2.4, delay:.9},
-    {color:'#06b6d4', angle:90,  r:246, size:62, blur:24, dur:3.0, delay:.3},
-    {color:'#f59e0b', angle:150, r:249, size:68, blur:27, dur:2.6, delay:.7},
-    {color:'#ef4444', angle:210, r:243, size:64, blur:26, dur:2.0, delay:1.1},
-    {color:'#e8c97a', angle:0,   r:247, size:60, blur:24, dur:3.2, delay:.2},
-    {color:'#ec4899', angle:60,  r:245, size:66, blur:26, dur:2.5, delay:.6},
-    {color:'#60a5fa', angle:120, r:250, size:62, blur:25, dur:2.9, delay:1.0},
-    {color:'#c9a84c', angle:180, r:244, size:72, blur:29, dur:2.3, delay:.4},
-    {color:'#f97316', angle:240, r:248, size:60, blur:24, dur:2.7, delay:.8},
-    {color:'#a78bfa', angle:300, r:242, size:64, blur:26, dur:3.1, delay:.1},
+    {color:'#c9a84c', angle:270, r:268, size:80, blur:32, dur:2.2, delay:0},
+    {color:'#a855f7', angle:330, r:264, size:70, blur:28, dur:2.8, delay:.5},
+    {color:'#3b82f6', angle:30,  r:270, size:75, blur:30, dur:2.4, delay:.9},
+    {color:'#06b6d4', angle:90,  r:266, size:66, blur:26, dur:3.0, delay:.3},
+    {color:'#f59e0b', angle:150, r:269, size:72, blur:29, dur:2.6, delay:.7},
+    {color:'#ef4444', angle:210, r:263, size:68, blur:27, dur:2.0, delay:1.1},
+    {color:'#e8c97a', angle:0,   r:267, size:64, blur:26, dur:3.2, delay:.2},
+    {color:'#ec4899', angle:60,  r:265, size:70, blur:28, dur:2.5, delay:.6},
+    {color:'#60a5fa', angle:120, r:270, size:66, blur:26, dur:2.9, delay:1.0},
+    {color:'#c9a84c', angle:180, r:264, size:76, blur:31, dur:2.3, delay:.4},
+    {color:'#f97316', angle:240, r:268, size:64, blur:26, dur:2.7, delay:.8},
+    {color:'#a78bfa', angle:300, r:262, size:68, blur:27, dur:3.1, delay:.1},
   ];
   leds.forEach(function(l){
     const rad = l.angle * Math.PI / 180;
